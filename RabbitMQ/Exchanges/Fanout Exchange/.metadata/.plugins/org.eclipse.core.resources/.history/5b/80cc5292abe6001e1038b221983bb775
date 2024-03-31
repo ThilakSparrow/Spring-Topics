@@ -1,0 +1,5 @@
+package io.spring.rabbitmq.fanoutexchanges;
+
+public class Message {
+
+}

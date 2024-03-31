@@ -1,0 +1,5 @@
+spring.application.name=direct-exchange
+
+server.port=7000
+
+logging.level.org.springframework.amqp=DEBUG

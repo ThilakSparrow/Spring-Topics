@@ -1,0 +1,36 @@
+package io.spring.rabbitmq.fanoutexchanges;
+
+import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.FanoutExchange;
+import org.springframework.amqp.core.Queue;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MessageConfig {
+
+	
+	@Bean
+	public Queue electronicsQueue() {
+		return new Queue("Electronics");
+	}
+	
+	@Bean
+	public Queue garmentsQueue() {
+		return new Queue("Garments");
+	}
+	
+	@Bean
+	public FanoutExchange exchange() {
+		return new FanoutExchange("fanoutExchange");
+	}
+	
+	@Bean 
+	public Binding(Queue electronicsQueue , FanoutExchange fanoutExchange) {
+		return BindingBuilder.bind(electronicsQueue).to(fanoutExchange);
+	}
+	
+	
+	
+	
+}

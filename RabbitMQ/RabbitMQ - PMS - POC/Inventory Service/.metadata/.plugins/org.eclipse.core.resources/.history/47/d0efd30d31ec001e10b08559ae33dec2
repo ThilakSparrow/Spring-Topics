@@ -1,0 +1,107 @@
+package io.spring.rabbitmq.rmqinventoryservice.service;
+
+import java.util.UUID;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import io.spring.rabbitmq.rmqinventoryservice.message.OrderMessage;
+import io.spring.rabbitmq.rmqinventoryservice.message.ProductUpdateMessage;
+import io.spring.rabbitmq.rmqinventoryservice.message.config.OrderConfirmationMessageConfig;
+import io.spring.rabbitmq.rmqinventoryservice.message.config.OrderErrorMessageConfig;
+import io.spring.rabbitmq.rmqinventoryservice.message.config.OrderMessageConfig;
+import io.spring.rabbitmq.rmqinventoryservice.message.config.ProductsMessageConfig;
+import io.spring.rabbitmq.rmqinventoryservice.model.InventoryItem;
+import io.spring.rabbitmq.rmqinventoryservice.repository.InventoryRepository;
+
+@Service
+public class InventoryService {
+
+	@Autowired
+	private InventoryRepository inventoryRepository;
+
+	@Autowired
+	private RabbitTemplate template;
+
+	Logger log = LoggerFactory.getLogger(this.getClass());
+
+	@RabbitListener(queues = ProductsMessageConfig.PRODUCT_UPDATES_QUEUE)
+	public void handleProductMessage(ProductUpdateMessage message) {
+
+		switch (message.getUpdateType()) {
+
+		case CREATE:
+			log.debug("Message Confumed -> {} , Product Update type : {}", message, message.getUpdateType());
+
+			InventoryItem item = new InventoryItem();
+
+			item.setProductName(message.getProduct().getProductName());
+			item.setSkuCode(message.getProduct().getSkuCode());
+			item.setQuantity(10);
+
+			inventoryRepository.save(item);
+
+			log.info("New Product Added , {}", item);
+
+			break;
+
+		case UPDATE:
+			log.info("Product Updated");
+			break;
+
+		case DELETE:
+
+			InventoryItem item1 = inventoryRepository.findInventoryItemBySkuCode(message.getProduct().getSkuCode());
+
+			if (item1 == null) {
+				throw new NullPointerException();
+			}
+
+			inventoryRepository.deleteById(item1.getId());
+			log.info("Product Removed -> {}", item1);
+			break;
+		}
+		log.info("Product update processed: {}", message);
+	}
+
+	@RabbitListener(queues = OrderMessageConfig.ORDER_STATUS_QUEUE)
+	public void handleOrderMessage(OrderMessage message) {
+
+//		OrderMessage responseMessage = new OrderMessage();
+
+		String requestedProductSkuCode = message.getSkuCode();
+		InventoryItem requestedProduct = inventoryRepository.findInventoryItemBySkuCode(requestedProductSkuCode);
+
+		int requestedQuantity = message.getQuantity();
+		int availableQuantity = requestedProduct.getQuantity();
+
+		if (requestedProduct == null || requestedQuantity <= 0 || availableQuantity < requestedQuantity) {
+
+			message.setMessageId(UUID.randomUUID().toString());
+			message.setResponseMessage("Order for id : " + message.getOrderId()+ " is Not Fullfilable");
+			message.setFullfilable(false);
+
+			template.convertAndSend(OrderErrorMessageConfig.ORDER_ERROR_QUEUE, message);
+
+			System.out.println(message);
+			System.out.println("Order not Fullfillabale");
+
+		} else {
+
+			message.setMessageId(UUID.randomUUID().toString());
+			message.setMessage("Order for id : " + message.getMessageId() + "is Fullfilable");
+			message.setSkuCode(message.getSkuCode());
+			message.setQuantity(requestedQuantity);
+			message.setFullilable(true);
+
+			template.convertAndSend(OrderConfirmationMessageConfig.ORDER_CONFIRMATION_QUEUE, message);
+			System.out.println(message);
+			System.out.println("Order Fullfillabale");
+		}
+	}
+
+}

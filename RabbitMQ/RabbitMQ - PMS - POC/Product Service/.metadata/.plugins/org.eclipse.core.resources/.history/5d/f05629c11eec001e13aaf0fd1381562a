@@ -1,0 +1,5 @@
+package io.spring.rabbitmq.rmqproductservice.message.config;
+
+public class ProductMessageConfig {
+
+}

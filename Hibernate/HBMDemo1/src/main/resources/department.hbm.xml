@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name = "com.rntbci.Department" table = "department">
+      <id name = "dno" type = "int" column = "dno">
+         <generator class="increment"/>
+      </id>
+
+      <property name = "dname" column = "dname" type = "string"/>
+      <property name = "loc" column = "loc" type = "string"/>
+   </class>
+</hibernate-mapping>

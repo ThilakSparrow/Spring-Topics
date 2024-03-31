@@ -1,0 +1,32 @@
+package io.spring.rabbitmq.fanoutexchanges;
+
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Consumers {
+
+	@RabbitListener(queues = "Groceries")
+	public void groceriesQueueListener(Message message) {
+		
+		System.out.println("Message Received --> "  + message);
+	
+	}
+	
+	@RabbitListener(queues = "Electronics")
+	public void gadgetsQueueListener(Message message) {
+				
+		System.out.println("Message Received --> "  + message);
+	
+	}
+	
+	@RabbitListener(queues = MessageConfig.GARMENTS_QUEUE)
+	public void garmentsQueueListener(Message message) {
+		
+		//Error handling of dead letters
+		System.out.println("Message Received --> "  + message);
+	
+	}
+
+	
+}

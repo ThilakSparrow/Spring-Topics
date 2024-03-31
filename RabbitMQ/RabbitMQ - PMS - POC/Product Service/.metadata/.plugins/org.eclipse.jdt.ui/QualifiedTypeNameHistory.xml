@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatusCode"/>
+    <fullyQualifiedTypeName name="javax.management.RuntimeErrorException"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.rabbit.annotation.RabbitListener"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.core.Queue"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.core.Binding"/>
+    <fullyQualifiedTypeName name="io.spring.rabbitmq.rmqproductservice.message.ProductDetailsMessage"/>
+    <fullyQualifiedTypeName name="io.spring.rabbitmq.rmqproductservice.repository.ProductRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.rabbit.core.RabbitTemplate"/>
+    <fullyQualifiedTypeName name="io.spring.rabbitmq.rmqproductservice.message.config.ProductDetailsRequestMessageConfig"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.core.MessageProperties"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+</qualifiedTypeNameHistroy>

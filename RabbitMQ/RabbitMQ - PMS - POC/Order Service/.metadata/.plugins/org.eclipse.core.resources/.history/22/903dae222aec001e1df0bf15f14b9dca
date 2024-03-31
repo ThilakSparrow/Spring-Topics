@@ -1,0 +1,5 @@
+package io.spring.rabbitmq.rmqorderservice.repository;
+
+public interface OrderRepository {
+
+}

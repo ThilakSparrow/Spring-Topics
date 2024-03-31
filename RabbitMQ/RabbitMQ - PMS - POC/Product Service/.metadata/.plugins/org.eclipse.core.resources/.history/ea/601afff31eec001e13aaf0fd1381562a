@@ -1,0 +1,5 @@
+package io.spring.rabbitmq.rmqproductservice.service;
+
+public class Listeners {
+
+}

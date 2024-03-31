@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;direct-exchange&apos;" deleteContents="false" description="Delete resource &apos;direct-exchange&apos;" element1="/direct-exchange" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1710865757612"/>&#x0A;<refactoring comment="Delete 3 resources" deleteContents="false" description="Delete 3 resources" element1="/direct-exchange" element2="/fanout-exchange" element3="/headers-exchange" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1710917627674"/>
+</session>

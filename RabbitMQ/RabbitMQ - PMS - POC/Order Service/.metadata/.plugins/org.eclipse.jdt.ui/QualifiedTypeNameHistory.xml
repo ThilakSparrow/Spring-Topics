@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="io.spring.rabbitmq.rmqorderservice.message.config.PaymentMessageConfig"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.core.MessageProperties"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
+    <fullyQualifiedTypeName name="io.spring.rabbitmq.rmqorderservice.repository.OrderRepository"/>
+    <fullyQualifiedTypeName name="io.spring.rabbitmq.rmqorderservice.model.Order"/>
+    <fullyQualifiedTypeName name="io.spring.rabbitmq.rmqorderservice.message.InventoryResponseMessage"/>
+    <fullyQualifiedTypeName name="io.spring.rabbitmq.rmqorderservice.message.ProductDetailsMessage"/>
+    <fullyQualifiedTypeName name="io.spring.rabbitmq.rmqorderservice.model.Order.OrderStatus"/>
+</qualifiedTypeNameHistroy>

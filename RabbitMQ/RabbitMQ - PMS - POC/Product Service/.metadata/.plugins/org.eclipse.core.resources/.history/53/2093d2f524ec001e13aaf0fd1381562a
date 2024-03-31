@@ -1,0 +1,45 @@
+package io.spring.rabbitmq.rmqproductservice.service;
+
+import org.springframework.amqp.core.MessageProperties;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import io.spring.rabbitmq.rmqproductservice.message.ProductDetailsMessage;
+import io.spring.rabbitmq.rmqproductservice.message.config.ProductDetailsRequestMessageConfig;
+import io.spring.rabbitmq.rmqproductservice.model.Product;
+import io.spring.rabbitmq.rmqproductservice.repository.ProductRepository;
+
+@Service
+public class Listeners {
+
+	@Autowired
+	RabbitTemplate template;
+	
+	@Autowired
+	ProductRepository productRepository;
+	
+	
+	@RabbitListener(queues = ProductDetailsRequestMessageConfig.PRODUCT_DETAILS_QUEUE)
+	public void handle(ProductDetailsMessage productDetailsMessage) {
+		
+		System.out.println(productDetailsMessage);
+		
+		String requestedSkuCode = productDetailsMessage.getSkuCode();
+		
+		Product product = productRepository.findProductBySkuCode(requestedSkuCode);
+	
+		System.out.println(product);
+		
+		productDetailsMessage.setPrice(product.getPrice());
+		
+		
+		template.convertAndSend(ProductDetailsRequestMessageConfig.PRODUCTS_EXCHANGE,
+								ProductDetailsRequestMessageConfig.PRODUCT_DETAILS_ROUTING_KEY,
+								productDetailsMessage);
+		
+		
+	}
+	
+}

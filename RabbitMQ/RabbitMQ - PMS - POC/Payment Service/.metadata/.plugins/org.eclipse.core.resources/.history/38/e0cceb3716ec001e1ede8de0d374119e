@@ -1,0 +1,13 @@
+package io.spring.rabbitmq.paymentservice;
+
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+
+import io.spring.rabbitmq.paymentservice.config.PaymentMessageConfig;
+
+public class Listener {
+
+	@RabbitListener(queues = PaymentMessageConfig.PAYMENT_QUEUE)
+	public void ma() {
+		
+	}
+}

@@ -1,0 +1,33 @@
+package io.spring.rabbitmq.paymentservice.paymentService;
+
+import java.util.UUID;
+
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import io.spring.rabbitmq.paymentservice.config.PaymentMessageConfig;
+import io.spring.rabbitmq.paymentservice.config.ProductMessageConfig;
+import io.spring.rabbitmq.paymentservice.message.OrderMessage;
+
+@Service
+public class Listener {
+
+	@Autowired
+	RabbitTemplate template;
+	
+	@RabbitListener(queues = PaymentMessageConfig.PAYMENT_QUEUE)
+	public void handlePayment(OrderMessage message) {
+		
+		System.out.println(message.getMessage());
+		System.out.println(message);
+		
+		template.convertSendAndReceive(ProductMessageConfig.PRODUCTS_EXCHANGE, 
+									   ProductMessageConfig.PRODUCT_DETAILS_ROUTING_KEY,
+									   message,
+									   UUID.randomUUID());
+		
+		
+	} 
+}

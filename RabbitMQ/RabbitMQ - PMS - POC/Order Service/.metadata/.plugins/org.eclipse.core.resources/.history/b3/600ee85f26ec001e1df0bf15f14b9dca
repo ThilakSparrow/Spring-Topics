@@ -1,0 +1,14 @@
+package io.spring.rabbitmq.rmqorderservice.message;
+
+public class Snippet {
+	ProductDetailsMessage productDetailsMessage = new ProductDetailsMessage();
+	
+			productDetailsMessage.setMessageId(UUID.randomUUID().toString());
+			productDetailsMessage.setMessage("I need the Product Details to Process the Payment ");
+			productDetailsMessage.setSkuCode(orderMessage.getSkuCode());
+	
+			template.convertAndSend(ProductDetailsRequestMessageConfig.PRODUCTS_EXCHANGE,
+					ProductDetailsRequestMessageConfig.PRODUCT_DETAILS_ROUTING_KEY, productDetailsMessage);
+		}
+}
+

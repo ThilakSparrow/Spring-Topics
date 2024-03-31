@@ -1,0 +1,2 @@
+spring.application.name=topic-exchange
+logging.level.io.spring.rabbitmq.topicexchange== DEBUG

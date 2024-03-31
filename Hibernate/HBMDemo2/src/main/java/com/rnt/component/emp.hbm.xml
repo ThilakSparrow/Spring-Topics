@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name = "com.rnt.component.Employee" table = "comp_emp">
+      <id name = "empid" type = "int" column = "EmployeeId">
+         <generator class="increment"/>
+      </id>
+
+      <property name = "name" column = "EmployeeName" type = "string"/>
+      
+      <component name = "address" class = "com.rnt.component.Address">
+		  <property name ="street" type = "string" column="street"></property>
+		  <property name ="city" type = "string" column="city"></property>
+		  <property name ="state" type = "string" column="state"></property>
+		  <property name ="pincode" type = "int" column="pincode"></property>
+	  </component>
+   </class>
+</hibernate-mapping>

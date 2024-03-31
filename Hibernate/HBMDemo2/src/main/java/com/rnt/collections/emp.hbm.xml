@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name = "com.rnt.collections.EmployeeList" table = "list_emp">
+      <id name = "empid" type = "int" column = "EmployeeId">
+         <generator class="increment"/>
+      </id>
+
+      <property name = "name" column = "EmployeeName" type = "string"/>
+      
+      <list name = "Skills" table = "list_skills">
+		  <key column="empid"></key>
+		  <index column = "skillid"></index>
+		  <element column = "skill" type="string"></element>
+		  
+	  </list>
+   </class>
+</hibernate-mapping>

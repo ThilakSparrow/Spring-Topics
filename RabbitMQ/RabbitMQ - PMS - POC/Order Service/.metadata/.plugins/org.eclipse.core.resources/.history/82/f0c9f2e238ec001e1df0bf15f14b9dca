@@ -1,0 +1,103 @@
+package io.spring.rabbitmq.rmqorderservice.service;
+
+import java.util.Date;
+import java.util.UUID;
+
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import io.spring.rabbitmq.rmqorderservice.dto.OrderDTO;
+import io.spring.rabbitmq.rmqorderservice.message.InventoryResponseMessage;
+import io.spring.rabbitmq.rmqorderservice.message.OrderMessage;
+import io.spring.rabbitmq.rmqorderservice.message.ProductDetailsMessage;
+import io.spring.rabbitmq.rmqorderservice.message.config.OrderConfirmationResponseConfig;
+import io.spring.rabbitmq.rmqorderservice.message.config.OrderErrorResponseConfig;
+import io.spring.rabbitmq.rmqorderservice.message.config.OrderMessageConfig;
+import io.spring.rabbitmq.rmqorderservice.message.config.ProductDetailsRequestMessageConfig;
+import io.spring.rabbitmq.rmqorderservice.model.Order;
+import io.spring.rabbitmq.rmqorderservice.repository.OrderRepository;
+
+@Service
+public class OrderService {
+
+	@Autowired
+	private RabbitTemplate template;
+
+	@Autowired
+	OrderRepository orderRepository;
+
+	public ResponseEntity<?> placeOrder(OrderDTO orderDto) {
+
+		Order order = new Order();
+
+		String orderId = UUID.randomUUID().toString();
+
+		System.out.println(orderId);
+
+		order.setOrderId(orderId);
+		order.setSkuCode(orderDto.getSkuCode());
+		order.setQuantity(orderDto.getQuantity());
+		order.setOrderStatus(null);
+
+		orderRepository.save(order);
+
+		OrderMessage message = new OrderMessage();
+
+		message.setMessageId(UUID.randomUUID().toString());
+		message.setMessage("... New Order ...");
+		message.setOrderId(orderId);
+		message.setSkuCode(orderDto.getSkuCode());
+		message.setQuantity(orderDto.getQuantity());
+		message.setDate(new Date());
+
+		template.convertAndSend(OrderMessageConfig.INVENTORY_EVENTS_EXCHANGE,
+				OrderMessageConfig.ORDER_STATUS_ROUTING_KEY, message);
+
+		return new ResponseEntity<>("Your order is processing ...", HttpStatus.OK);
+
+	}
+
+	@RabbitListener(queues = OrderConfirmationResponseConfig.ORDER_CONFIRMATION_QUEUE)
+	public void handleOrderConfirmReponseStatus(InventoryResponseMessage inventoryResponse) {
+		if (inventoryResponse.isFullfilable() == true)
+			System.out.println("Order Placed ...");
+		System.out.println(inventoryResponse);
+
+		Order order = orderRepository.findOrderByOrderId(inventoryResponse.getOrderId());
+
+		System.out.println(order);
+
+		String skuCode = order.getSkuCode();
+
+		ProductDetailsMessage productDetailsMessage = new ProductDetailsMessage();
+
+		productDetailsMessage.setMessageId(UUID.randomUUID().toString());
+		productDetailsMessage.setMessage("Hey i need a price details for this skucode!");
+		productDetailsMessage.setOrderId(order.getOrderId());
+		productDetailsMessage.setSkuCode(skuCode);
+		
+
+		template.convertAndSend(ProductDetailsRequestMessageConfig.PRODUCTS_EXCHANGE,
+				ProductDetailsRequestMessageConfig.PRODUCT_DETAILS_ROUTING_KEY, productDetailsMessage);
+
+	}
+
+	@RabbitListener(queues = ProductDetailsRequestMessageConfig.PRODUCT_DETAILS_QUEUE)
+	public void handleProductDetails(ProductDetailsMessage productDetailsMessage) {
+
+		productDetailsMessage.getPrice();
+		
+	}
+
+	@RabbitListener(queues = OrderErrorResponseConfig.ORDER_ERROR_QUEUE)
+	public void handleOrderErrorReponseStatus(InventoryResponseMessage inventoryResponse) {
+		if (inventoryResponse.isFullfilable() == false)
+			System.out.println("Order Placement error, Message : " + inventoryResponse.getMessage());
+		System.out.println(inventoryResponse);
+	}
+
+}

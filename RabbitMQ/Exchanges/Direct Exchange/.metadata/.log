@@ -1,0 +1,343 @@
+!SESSION 2024-03-20 12:24:36.173 -----------------------------------------------
+eclipse.buildId=4.19.0.202306150758
+java.version=17.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4 -data C:\Users\z041409\Downloads\rabbitMq-master\Exchanges\Direct Exchange -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-03-20 12:24:37.939
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.jface 2 0 2024-03-20 12:24:43.539
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-03-20 12:24:43.539
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-03-20 12:24:43.539
+!MESSAGE A conflict occurred for CTRL+SHIFT+V:
+Binding(CTRL+SHIFT+V,
+	ParameterizedCommand(Command(org.eclipse.jdt.debug.ui.command.OpenFromClipboard,Open from Clipboard,
+		Opens a Java element or a Java stack trace from clipboard,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.debug.ui.command.OpenFromClipboard"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+V,
+	ParameterizedCommand(Command(org.jkiss.dbeaver.core.edit.paste.special,Advanced Paste ...,
+		Paste with extra settings,
+		Category(org.jkiss.dbeaver.core.util,Utility,Utility Commands,true),
+		WorkbenchHandlerServiceHandler("org.jkiss.dbeaver.core.edit.paste.special"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-03-20 12:24:43.539
+!MESSAGE A conflict occurred for CTRL+SHIFT+N:
+Binding(CTRL+SHIFT+N,
+	ParameterizedCommand(Command(org.eclipse.jdt.debug.ui.commands.AllInstances,All Instances,
+		View all instances of the selected type loaded in the target VM,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.debug.ui.commands.AllInstances"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+N,
+	ParameterizedCommand(Command(org.jkiss.dbeaver.core.new.connection,New Database &Connection,
+		New Connection Wizard,
+		Category(org.jkiss.dbeaver.core.navigator,Database Navigator,Database Navigator Commands,true),
+		WorkbenchHandlerServiceHandler("org.jkiss.dbeaver.core.new.connection"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-03-20 12:24:43.539
+!MESSAGE A conflict occurred for CTRL+SHIFT+A:
+Binding(CTRL+SHIFT+A,
+	ParameterizedCommand(Command(org.eclipse.pde.ui.openPluginArtifact,Open Plug-in Artifact,
+		Open a plug-in artifact in the manifest editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.pde.ui.openPluginArtifact"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+A,
+	ParameterizedCommand(Command(org.jkiss.dbeaver.core.navigator.set.default,Set as default,
+		Set as default object,
+		Category(org.jkiss.dbeaver.core.navigator,Database Navigator,Database Navigator Commands,true),
+		WorkbenchHandlerServiceHandler("org.jkiss.dbeaver.core.navigator.set.default"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-03-20 12:24:49.987
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\z041409'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 2 2 2024-03-20 12:24:50.272
+!MESSAGE Invalid preference category path: org.jkiss.dbeaver.preferences.main (bundle: org.jkiss.dbeaver.core, page: org.jkiss.dbeaver.preferences.main.toolbar.customization)
+
+!ENTRY org.eclipse.ui 2 2 2024-03-20 12:24:50.274
+!MESSAGE Invalid preference category path: org.jkiss.dbeaver.preferences.main (bundle: org.jkiss.dbeaver.core, page: org.jkiss.dbeaver.preferences.accessibility)
+
+!ENTRY org.eclipse.ui 2 2 2024-03-20 12:24:50.276
+!MESSAGE Invalid preference category path: org.jkiss.dbeaver.preferences.main (bundle: org.jkiss.dbeaver.ui.app.eclipse, page: org.jkiss.dbeaver.preferences.main.notifications)
+
+!ENTRY org.eclipse.ui 2 2 2024-03-20 12:24:50.278
+!MESSAGE Invalid preference category path: org.jkiss.dbeaver.preferences.main (bundle: org.jkiss.dbeaver.ui.app.eclipse, page: org.jkiss.dbeaver.preferences.main.misc)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:24:53.457
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:24:56.724
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:24:56.736
+!MESSAGE Boot project ADDED: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:24:56.738
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:24:56.765
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-03-20 12:24:56.810
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Users\z041409\Downloads\Softwares\sts-4.19.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\javaw.exe
+-cp
+C:\Users\z041409\Downloads\Softwares\sts-4.19.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\classes;C:\Users\z041409\Downloads\Softwares\sts-4.19.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\lib\*
+-Dsts.lsp.client=eclipse
+-Dlsp.completions.indentation.enable=true
+-Xmx1024m
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:C:\Users\z041409\Downloads\Softwares\sts-4.19.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\classes\application.properties
+-XX:ErrorFile=C:/Users/z041409/Downloads/rabbitMq-master/Exchanges/Direct Exchange/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1710917696807
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:24:56.811
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:24:56.821
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-03-20 12:24:56.827
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 14548
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-03-20 12:24:56.882
+!MESSAGE org.springframework.ide.vscode.commons.protocol.spring.SpringModelLanguageServer cannot be found by org.springframework.tooling.boot.ls_1.47.0.202306150731
+!STACK 0
+java.lang.ClassNotFoundException: org.springframework.ide.vscode.commons.protocol.spring.SpringModelLanguageServer cannot be found by org.springframework.tooling.boot.ls_1.47.0.202306150731
+	at org.eclipse.osgi.internal.loader.BundleLoader.generateException(BundleLoader.java:541)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:536)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:416)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:622)
+	at org.eclipse.lsp4e.LanguageServersRegistry$ExtensionLanguageServerDefinition.getServerInterface(LanguageServersRegistry.java:196)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$1(LanguageServerWrapper.java:291)
+	at java.base/java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:787)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:24:58.615
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:24:59.217
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.eclipse.jface 2 0 2024-03-20 12:26:47.651
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-03-20 12:26:47.652
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.jkiss.dbeaver.core.edit.copy.special,Advanced Copy,
+		Copy special,
+		Category(org.jkiss.dbeaver.core.util,Utility,Utility Commands,true),
+		WorkbenchHandlerServiceHandler("org.jkiss.dbeaver.core.edit.copy.special"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-03-20 12:29:19.045
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jface.text 4 0 2024-03-20 12:29:19.215
+!MESSAGE Unexpected runtime error while computing a text hover
+!STACK 0
+java.lang.IllegalArgumentException: electrsQueue() (not open) [in MessageConfig [in [Working copy] MessageConfig.java [in io.spring.rabbitmq.directexchanges.config [in src/main/java [in direct-exchange]]]]] does not exist
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver$1Requestor.acceptAST(CompilationUnitResolver.java:895)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.resolve(CompilationUnitResolver.java:1008)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.resolve(CompilationUnitResolver.java:692)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.resolve(CompilationUnitResolver.java:907)
+	at org.eclipse.jdt.core.dom.ASTParser.createBindings(ASTParser.java:1112)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoveredNodeBinding(JavadocHover.java:893)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getAnnotations(JavadocHover.java:1178)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.addAnnotations(JavadocHover.java:1142)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:750)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:671)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:663)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+Caused by: Java Model Exception: Error in Java Model (code 969): electrsQueue() [in MessageConfig [in [Working copy] MessageConfig.java [in io.spring.rabbitmq.directexchanges.config [in src/main/java [in direct-exchange]]]]] does not exist
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:574)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:617)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:328)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:314)
+	at org.eclipse.jdt.internal.core.Member.getNameRange(Member.java:361)
+	at org.eclipse.jdt.internal.core.util.DOMFinder.search(DOMFinder.java:82)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver$1Requestor.acceptAST(CompilationUnitResolver.java:893)
+	... 14 more
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:29:32.292
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:30:11.372
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:30:18.562
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:31:59.176
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:33:25.406
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:33:27.264
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:33:28.203
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:33:32.596
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:34:32.687
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:34:54.917
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:35:47.265
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:35:56.288
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:36:01.554
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:36:08.994
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:36:27.565
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:36:41.128
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:42:37.079
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:44:55.567
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:46:32.663
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:46:53.906
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:47:13.404
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:47:19.221
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:47:31.755
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:47:48.929
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:47:58.640
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:48:39.492
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:49:32.898
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:49:36.145
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-20 12:54:08.786
+!MESSAGE Classpath changed for project: direct-exchange
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-03-20 14:51:59.551
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)

@@ -1,0 +1,89 @@
+package io.spring.rabbitmq.rmqproductservice.service;
+
+import java.util.Date;
+import java.util.Optional;
+import java.util.UUID;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import io.spring.rabbitmq.rmqproductservice.message.ProductUpdateMessage;
+import io.spring.rabbitmq.rmqproductservice.message.ProductUpdateMessage.UpdateType;
+import io.spring.rabbitmq.rmqproductservice.message.config.ProductUpdatesMessageConfig;
+import io.spring.rabbitmq.rmqproductservice.model.Product;
+import io.spring.rabbitmq.rmqproductservice.repository.ProductRepository;
+
+@Service
+public class ProductService {
+
+	@Autowired
+	private ProductRepository productRepository;
+
+	@Autowired
+	private RabbitTemplate template;
+
+	Logger log = LoggerFactory.getLogger(this.getClass());
+
+	public ResponseEntity<?> addProduct(Product product) {
+
+		productRepository.save(product);
+		log.info("Product saved {}", product);
+
+		ProductUpdateMessage message = new ProductUpdateMessage();
+
+		message.setMessageId(UUID.randomUUID().toString());
+		message.setMessage("New Product Added");
+		message.setProduct(product);
+		message.setDate(new Date());
+		message.setUpdateType(UpdateType.CREATE);
+
+		template.convertAndSend(ProductUpdatesMessageConfig.PRODUCT_EVENTS_EXCHANGE,
+				ProductUpdatesMessageConfig.PRODUCT_UPDATES_ROUTING_KEY, message);
+
+		log.debug("Message published  -  {} ", message);
+
+		return new ResponseEntity<>("Product Added Successfully!!", HttpStatus.CREATED);
+	}
+
+	public ResponseEntity<?> deleteProduct(long id) {
+
+		Optional<Product> product = productRepository.findById(id);
+
+		if (product.isEmpty()) {
+			throw new RuntimeException();
+		}
+
+		productRepository.deleteById(id);
+		log.info("Product deleted : {}", product);
+
+		ProductUpdateMessage message = new ProductUpdateMessage();
+
+		message.setMessageId(UUID.randomUUID().toString());
+		message.setMessage("A Product Deleted !!");
+		message.setProduct(product.get());
+		message.setDate(new Date());
+		message.setUpdateType(UpdateType.DELETE);
+		
+
+		template.convertAndSend(ProductUpdatesMessageConfig.PRODUCT_EVENTS_EXCHANGE,
+				ProductUpdatesMessageConfig.PRODUCT_UPDATES_ROUTING_KEY, message);
+		
+		log.debug("Message published  -  {} ", message);
+
+		
+		return new ResponseEntity<>("Product Deleted!!",HttpStatus.OK);
+	}
+	
+	
+
+	public ResponseEntity<?> wipeOutDb() {
+		productRepository.deleteAll();
+		return new ResponseEntity<>("Databased is Cleaned !!",HttpStatus.OK);
+	}
+
+}

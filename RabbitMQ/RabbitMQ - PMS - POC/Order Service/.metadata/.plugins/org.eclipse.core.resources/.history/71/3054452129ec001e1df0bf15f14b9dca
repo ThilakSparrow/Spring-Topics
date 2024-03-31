@@ -1,0 +1,6 @@
+package io.spring.rabbitmq.rmqorderservice.model;
+
+@Entity
+public class Order {
+
+}

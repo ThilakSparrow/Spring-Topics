@@ -1,0 +1,26 @@
+package io.spring.rabbitmq.paymentservice.config;
+
+import org.springframework.amqp.core.DirectExchange;
+import org.springframework.amqp.core.Queue;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class PaymentMessageConfig {
+
+	public static final String PAYMENT_QUEUE = "payment.queue";
+	public static final String PAYMENT_EVENTS_EXCHANGE = "payment.events.exchange";
+	public static final String PAYMENT_ROUTING_KEY = "payment";
+
+	@Bean
+	public Queue queue() {
+		return new Queue(PAYMENT_QUEUE, true);
+	}
+
+	@Bean
+	public DirectExchange directExchange() {
+		return new DirectExchange(PAYMENT_EVENTS_EXCHANGE);
+	}
+
+}
+

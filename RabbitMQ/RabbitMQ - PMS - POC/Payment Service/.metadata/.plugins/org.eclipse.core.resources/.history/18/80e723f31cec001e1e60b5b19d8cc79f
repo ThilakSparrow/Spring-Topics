@@ -1,0 +1,8 @@
+package io.spring.rabbitmq.paymentservice.config;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class ProductMessageConfig {
+
+}

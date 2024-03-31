@@ -1,0 +1,25 @@
+package io.spring.rabbitmq.rmqorderservice.message;
+
+import lombok.Data;
+
+@Data
+public class InventoryResponseMessage {
+
+	private String messageId;
+	private String message;
+	private String skuCode;
+	private int quantity;
+	private boolean isFullilable;
+	
+	public InventoryResponseMessage() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public InventoryResponseMessage(String messageId, String message, boolean isFullilable) {
+		super();
+		this.messageId = messageId;
+		this.message = message;
+		this.isFullilable = isFullilable;
+	}
+}
